@@ -26,7 +26,7 @@ class SongAdapter(
      *
      */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SongViewHolder {
-        val view = LayoutInflater.from(parent.context)
+        val view: View = LayoutInflater.from(parent.context)
             .inflate(R.layout.view_holder_song, parent, false)
         return SongViewHolder(view)
     }
