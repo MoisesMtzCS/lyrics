@@ -1,4 +1,4 @@
-package cs.med.mtz.moises.lyrics.api
+package cs.med.mtz.moises.lyrics.api.model
 
 /* */
 data class GetSongDetails(

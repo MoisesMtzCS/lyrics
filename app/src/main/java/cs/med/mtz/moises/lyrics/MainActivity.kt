@@ -2,10 +2,11 @@ package cs.med.mtz.moises.lyrics
 
 import android.os.Bundle
 import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import cs.med.mtz.moises.lyrics.api.Song
+import cs.med.mtz.moises.lyrics.domain.entity.Song
 import kotlinx.android.synthetic.main.activity_main.*
 
 /* */
@@ -62,9 +63,9 @@ class MainActivity : AppCompatActivity() {
      *
      */
     private fun observeViewModel() {
-        mainViewModel.nameLiveData.observe(this, Observer<String> {
-            tvName.text = it
-        })
+//        mainViewModel.nameLiveData.observe(this, Observer<String> {
+//            tvName.text = it
+//        })
 
         mainViewModel.songsLiveData.observe(this, Observer<List<Song>> {
             songs.clear()
@@ -77,7 +78,7 @@ class MainActivity : AppCompatActivity() {
      *
      */
     private fun execute() {
-        mainViewModel.executeNameLoad()
+        //mainViewModel.executeNameLoad()
         mainViewModel.executeLoadSongs()
     }
 

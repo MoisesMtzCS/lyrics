@@ -3,9 +3,10 @@ package cs.med.mtz.moises.lyrics
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import cs.med.mtz.moises.lyrics.api.Song
+import cs.med.mtz.moises.lyrics.domain.entity.Song
 
 /* */
 class SongAdapter(
@@ -13,10 +14,12 @@ class SongAdapter(
 ) : RecyclerView.Adapter<SongAdapter.SongViewHolder>() {
 
     /* */
-    class SongViewHolder(view: View): RecyclerView.ViewHolder(view) {
+    class SongViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         /* */
         val tvTitle: TextView = itemView.findViewById(R.id.tv_title)
+        val ivCover: ImageView = itemView.findViewById(R.id.iv_cover)
+
 
         // TODO: Implementar la imagen
 
@@ -42,6 +45,7 @@ class SongAdapter(
     override fun onBindViewHolder(holder: SongViewHolder, position: Int) {
         val song: Song = songs[position]
         holder.tvTitle.text = song.title
+
     }
 
 }
