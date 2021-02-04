@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import cs.med.mtz.moises.lyrics.api.model.AppGlideModule
 import cs.med.mtz.moises.lyrics.domain.entity.Song
 
 /* */
@@ -39,12 +41,16 @@ class SongAdapter(
      */
     override fun getItemCount(): Int = songs.size
 
+
     /**
      *
      */
     override fun onBindViewHolder(holder: SongViewHolder, position: Int) {
         val song: Song = songs[position]
         holder.tvTitle.text = song.title
+        Glide.with(holder.itemView)
+            .load(song.imageUrl)
+            .into(holder.ivCover)
 
     }
 

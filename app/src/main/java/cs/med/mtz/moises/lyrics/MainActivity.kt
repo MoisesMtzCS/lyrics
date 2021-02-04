@@ -6,6 +6,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import cs.med.mtz.moises.lyrics.domain.entity.Song
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -62,6 +63,7 @@ class MainActivity : AppCompatActivity() {
     /**
      *
      */
+
     private fun observeViewModel() {
 //        mainViewModel.nameLiveData.observe(this, Observer<String> {
 //            tvName.text = it
