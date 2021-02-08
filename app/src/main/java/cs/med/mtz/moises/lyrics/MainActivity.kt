@@ -2,12 +2,12 @@ package cs.med.mtz.moises.lyrics
 
 import android.os.Bundle
 import android.view.View
-import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bumptech.glide.Glide
 import cs.med.mtz.moises.lyrics.domain.entity.Song
+import kotlinx.android.synthetic.main.activity_lyrics_song.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 /* */
@@ -33,7 +33,8 @@ class MainActivity : AppCompatActivity() {
         mainViewModel = MainViewModel()
         setupViews()
         observeViewModel()
-        execute()
+        //execute()
+        searchOnClick()
     }
 
     /**
@@ -80,25 +81,28 @@ class MainActivity : AppCompatActivity() {
      *
      */
     private fun execute() {
-        //mainViewModel.executeNameLoad()
-        mainViewModel.executeLoadSongs()
+        // mainViewModel.executeLyricsSongs()
+        // mainViewModel.executeNameLoad()
+
+
     }
 
     /**
      *
      */
     private fun onActionButtonClickLister(v: View) {
-
     }
 
-//
-//    fun searchLyrics() {
-//        searchButton.setOnClickListener {
-//            if (value.isNotEmpty()) {
-//
-//            }
-//        }
-//    }
+    /**
+     *
+     */
 
+    private fun searchOnClick() {
+        searchButton.setOnClickListener {
+            if (value.isNotBlank()) {
+                mainViewModel.executeLoadSongs(value)
 
+            }
+        }
+    }
 }

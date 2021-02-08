@@ -5,7 +5,8 @@ import cs.med.mtz.moises.lyrics.domain.entity.Song
 data class SongDto(
     val id: Long,
     val title: String,
-    val album: AlbumDto
+    val album: AlbumDto,
+    val artist: ArtistDto
 ) {
 
     /**
@@ -15,7 +16,9 @@ data class SongDto(
         Song(
             id = id,
             title = title,
-            imageUrl = album.cover_medium
+            imageUrl = album.cover_medium,
+            artist = artist.name
+
         )
 
 }
